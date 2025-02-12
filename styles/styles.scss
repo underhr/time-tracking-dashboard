@@ -20,6 +20,9 @@ $medium: 500;
     src: url(../fonts/Rubik/Rubik-VariableFont_wght.ttf);
 }
 
+* {
+    margin: 0;
+}
 body { //background
     display: flex;
     align-items: center;
@@ -75,7 +78,6 @@ article { //container
                 color: white;
             }
         }
-
     }
 }
 
@@ -106,6 +108,10 @@ article { //container
                 height: 5px;
             }
         }
+        .numbers {
+            display: flex;
+            flex-direction: column;
+        }
         .current {
             @include text(white, 56px, $light);
             margin-top: 20px;
@@ -123,39 +129,81 @@ article { //container
     grid-column: 2/3;
     grid-row: 1/2;
     background-color: #FF8B64;
-    @include image('../images/icon-work.svg', 160px, -10px);
+    @include image('../images/icon-work.svg', 80%, -10px);
 }
 #play-section {
     grid-column: 3/4;
     grid-row: 1/2;
     background-color: #55C2E6;
-    @include image('../images/icon-play.svg', 160px, -10px);
+    @include image('../images/icon-play.svg', 80%, -10px);
 }
 #study-section {
     grid-column: 4/5;
     grid-row: 1/2;
     background-color: #FF5E7D;
-    @include image('../images/icon-study.svg', 160px, -10px);
+    @include image('../images/icon-study.svg', 80%, -10px);
 }
 #exercise-section {
     grid-column: 2/3;
     grid-row: 2/3;
     background-color: #4BCF82;
-    @include image('../images/icon-exercise.svg', 160px, -1px);
+    @include image('../images/icon-exercise.svg', 80%, -1px);
 }
 #social-section {
     grid-column: 3/4;
     grid-row: 2/3;
     background-color: #7335D2;
-    @include image('../images/icon-social.svg', 165px, -15px);
+    @include image('../images/icon-social.svg', 80%, -15px);
 }
 #self-care-section {
     grid-column: 4/5;
     grid-row: 2/3;
     background-color: #F1C75B;
-    @include image('../images/icon-self-care.svg', 165px, -10px);
+    @include image('../images/icon-self-care.svg', 80%, -10px);
 }
 
-@media only screen and (max-width: 600px) {
-
+@media only screen and (max-width: 1111px) {
+    body {
+        padding: 20px;
+    }
+    article {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        overflow-x: hidden;
+        height: 100vh;
+        width: 100vw;
+    }
+    .section {
+        width: 100%;
+        margin: auto;
+        h1 {
+            font-size: 24px;
+        }
+    }
+    #name {
+        display: flex;
+        align-items: center;
+        div {
+            margin-left: 20px;
+            margin-bottom: 30px;
+        }
+    }
+    #tabs {
+        width: 100%;
+        display: flex;
+        flex-direction: row !important;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 0px;
+    }
+    .numbers {
+        display: flex;
+        flex-direction: row !important;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .current {
+        font-size: 32px !important;
+    }
 }
